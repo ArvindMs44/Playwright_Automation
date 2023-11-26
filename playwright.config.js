@@ -47,12 +47,6 @@ module.exports = defineConfig({
     },
 
     {
-      name: 'Webkit',
-      use: { ...devices['Desktop Safari'],
-      viewport: { width: 1920, height: 1080 }},
-    },
-
-    {
        name: 'Edge',
        use: { ...devices['Desktop Edge'],
        viewport: { width: 1920, height: 1080 }},
