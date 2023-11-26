@@ -5,5 +5,5 @@ test:
   image: node:18  # Choose a Node.js version that suits your project
   script:
     - npm install
-    - npx playwright install
-    - npx playwright test --grep @API
+    - npx playwright install --with-deps
+    - npx playwright test --grep @E2E
