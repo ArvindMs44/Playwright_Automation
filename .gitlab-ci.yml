@@ -6,4 +6,4 @@ test:
   script:
     - npm install
     - npx playwright install --with-deps
-    - npx playwright test --grep @E2E
+    - npx playwright test --grep @UI
