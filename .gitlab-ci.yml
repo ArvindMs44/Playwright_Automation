@@ -2,7 +2,7 @@ stages:
   - test
 test:
   stage: test
-  image: node:18  # Choose a Node.js version that suits your project
+  image: node:18
   script:
     - npm install
     - npx playwright install --with-deps

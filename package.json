@@ -6,6 +6,7 @@
   "scripts": {
     "regressiontests":"npx playwright test",
     "e2etests":"npx playwright test --grep @E2E",
+    "uitests":"npx playwright test --grep @UI",
     "apitests":"npx playwright test --grep @API"
   },
   "keywords": [],
