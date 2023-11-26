@@ -47,19 +47,9 @@ module.exports = defineConfig({
     },
 
     {
-       name: 'Edge',
-       use: { ...devices['Desktop Edge'],
-       viewport: { width: 1920, height: 1080 }},
-    },
-
-    {
-      name: 'AndroidTab',
-      use: { ...devices['Galaxy Tab S4 landscape'] },
-    },
-
-    {
-      name: 'IphoneTab',
-      use: { ...devices['iPad Pro 11 landscape'] },
+      name: 'Edge',
+      use: { ...devices['Desktop Edge'],
+      viewport: { width: 1920, height: 1080 }},
     },
 
   ],
