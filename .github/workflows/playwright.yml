@@ -20,9 +20,11 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright UI Tests 
-      run: npm run e2etests
+      run: npm run uitests
     - name: Run Playwright API Tests 
       run: npm run apitests
+    - name: Run Playwright E2E Tests 
+      run: npm run e2etests
     - uses: actions/upload-artifact@v3
       if: always()
       with:
