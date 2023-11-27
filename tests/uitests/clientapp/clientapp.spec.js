@@ -1,7 +1,6 @@
-import { test } from '@playwright/test';
-let dataset = JSON.parse(JSON.stringify(require("../../utils/clientapptestdata.json")));
+let { test, chromium} = require('@playwright/test');
 let {pageobjectmanager} = require('../../pageobjectmanager/pageobjectmanager');
-let { chromium } = require('playwright');
+let dataset = JSON.parse(JSON.stringify(require("../../utils/clientapptestdata.json")));
 let browser;
 let context;
 let page;
