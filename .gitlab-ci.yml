@@ -7,3 +7,5 @@ test:
     - npm install
     - npx playwright install --with-deps
     - npx playwright test --grep @UI
+    - npx playwright test --grep @API
+    - npx playwright test --grep @E2E
