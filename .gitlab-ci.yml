@@ -7,7 +7,4 @@ tests:
     matrix:
       - PROJECT: ['Chromium']
   script:
-    - npm ci
-    - npm run uitests --project=$PROJECT
-    - npm run apitests --project=$PROJECT
-    - npm run e2etests --project=$PROJECT
+    - npm run regressiontests --project=$PROJECT
