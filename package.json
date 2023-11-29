@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regressiontests":"npx playwright test",
-    "e2etests":"npx playwright test --grep @E2E",
-    "uitests":"npx playwright test --grep @UI",
-    "apitests":"npx playwright test --grep @API"
+    "regressiontests": "npx playwright test",
+    "e2etests": "npx playwright test --grep @E2E",
+    "uitests": "npx playwright test --grep @UI",
+    "apitests": "npx playwright test --grep @API"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "@playwright/test": "^1.40.0",
     "@types/node": "^20.9.3",
     "allure-playwright": "^2.9.2"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.8.1"
   }
 }
