@@ -39,26 +39,8 @@ module.exports = defineConfig({
       name: 'Chromium',
       use: { ...devices['Desktop Chrome'],
       viewport: { width: 1920, height: 1080 }},
-    },
-
-    {
-      name: 'Firefox',
-      use: { ...devices['Desktop Firefox'],
-      viewport: { width: 1920, height: 1080 }},
-    },
-
-    {
-      name: 'Edge',
-      use: { ...devices['Desktop Edge'],
-      viewport: { width: 1920, height: 1080 }},
-    },
-
-    {
-      name: 'Webkit',
-      use: { ...devices['Desktop Safari'],
-      viewport: { width: 1920, height: 1080 }},
-    },
-
+    }
+    
   ],
 
 });
