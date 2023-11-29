@@ -6,7 +6,7 @@ tests:
   parallel:
     matrix:
       - PROJECT: ['Chromium', 'Firefox', 'Edge']
-        SHARD: ['1/10', '2/10', '3/10', '4/10', '5/10', '6/10', '7/10', '8/10', '9/10', '10/10']
   script:
     - npm ci
-    - npx playwright test --project=$PROJECT --shard=$SHARD
+    - npm run uitests --project=$PROJECT
+    - npm run apitests --project=$PROJECT
