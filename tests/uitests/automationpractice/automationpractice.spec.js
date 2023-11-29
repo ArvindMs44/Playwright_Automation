@@ -147,3 +147,9 @@ test('@UI Test Tabs', async ({ page }) => {
     expect(text2).toBe('You have done a right click');
     console.log('Test Clicks Passed');
   });
+
+  test('@UI Test Visual Comparison', async ({ page }) => {
+    await page.goto('https://playwright.dev');
+    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('tests/screenshots/playwright.png');
+    console.log('Test Visual Comparison Passed');
+  });
