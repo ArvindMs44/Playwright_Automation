@@ -150,6 +150,6 @@ test('@UI Test Tabs', async ({ page }) => {
 
   test('@UI Test Visual Comparison', async ({ page }) => {
     await page.goto('https://playwright.dev');
-    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('tests/screenshots/playwright.png');
+    expect(await page.screenshot({ fullPage: true })).toMatchSnapshot('playwright.png');
     console.log('Test Visual Comparison Passed');
   });
