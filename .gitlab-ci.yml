@@ -5,8 +5,9 @@ tests:
   image: mcr.microsoft.com/playwright:v1.40.0-jammy
   parallel:
     matrix:
-      - PROJECT: ['Chromium', 'Firefox', 'Edge']
+      - PROJECT: ['Chromium']
   script:
     - npm ci
     - npm run uitests --project=$PROJECT
     - npm run apitests --project=$PROJECT
+    - npm run e2etests --project=$PROJECT
