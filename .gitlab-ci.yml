@@ -1,11 +1,12 @@
 stages:
   - test
-test:
+tests:
   stage: test
-  image: node:18
+  image: mcr.microsoft.com/playwright:v1.40.0-jammy
+  parallel:
+    matrix:
+      - PROJECT: ['Chromium', 'Firefox', 'Edge']
+        SHARD: ['1/10', '2/10', '3/10', '4/10', '5/10', '6/10', '7/10', '8/10', '9/10', '10/10']
   script:
-    - npm install
-    - npx playwright install --with-deps
-    - npx playwright test --grep @UI
-    - npx playwright test --grep @API
-    - npx playwright test --grep @E2E
+    - npm ci
+    - npx playwright test --project=$PROJECT --shard=$SHARD
