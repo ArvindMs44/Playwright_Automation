@@ -1,5 +1,4 @@
-let { test, expect, devices } = require('@playwright/test');
-const { title } = require('process');
+let { test, expect } = require('@playwright/test');
 
 test.afterEach(async ({ page }) => {
     await page.close()

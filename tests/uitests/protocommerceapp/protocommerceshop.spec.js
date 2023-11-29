@@ -1,5 +1,4 @@
-let { test, expect, devices } = require('@playwright/test');
-const { copyFileSync } = require('fs');
+let { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/angularpractice/shop');

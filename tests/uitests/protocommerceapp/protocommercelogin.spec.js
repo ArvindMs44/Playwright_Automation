@@ -1,4 +1,4 @@
-let { test, expect, devices } = require('@playwright/test');
+let { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://rahulshettyacademy.com/loginpagePractise/')
