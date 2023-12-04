@@ -1,6 +1,6 @@
-let { test, chromium} = require('@playwright/test');
-let {pageobjectmanager} = require('../../pageobjectmanager/pageobjectmanager');
-let dataset = JSON.parse(JSON.stringify(require("../../utils/clientapptestdata.json")));
+const { test } = require('../../../fixtures/pagefixtures');
+const { chromium } = require('@playwright/test');
+const dataset = JSON.parse(JSON.stringify(require("../../../utils/clientapptestdata.json")));
 let browser;
 let context;
 let page;
@@ -22,12 +22,7 @@ test.afterEach(async () => {
 // Test Method
 for(const data of dataset)
 {
-  test(`@E2E TEST E2E FLOW | ${data.email}`, async ({ page }) => {
-    let pageobjectManager = new pageobjectmanager(page);
-    let loginPage = pageobjectManager.getloginpage();
-    let paymentPage = pageobjectManager.getpaymentpage();
-    let dashboardPage = pageobjectManager.getdashboardpage();
-    let ordersPage = pageobjectManager.getorderspage();
+  test(`@E2E TEST E2E FLOW FIXTURE | ${data.email}`, async ({ page, loginPage, paymentPage, dashboardPage, ordersPage }) => {
     await loginPage.navigate(data.url);
     await loginPage.login(data.email,data.password);
     await dashboardPage.addproducttocart();
@@ -37,7 +32,7 @@ for(const data of dataset)
     await paymentPage.solveautosuggestions();
     await ordersPage.validateproduct();
     await ordersPage.logout();
-    console.log(`TEST E2E FLOW PASSED | ${data.email}`);
+    console.log(`TEST E2E FLOW FIXTURE PASSED | ${data.email}`);
   });
 }
 

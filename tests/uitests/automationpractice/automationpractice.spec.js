@@ -75,13 +75,13 @@ test('@UI Test WebTables', async ({ page }) => {
 
 test('@UI Test Screenshot', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
-    await page.screenshot({ path: 'tests/screenshots/screenshot.png', fullPage: true })
+    await page.screenshot({ path: 'screenshots/screenshot.png', fullPage: true })
     console.log('Test Screenshot Passed')
 });
 
 test('@UI Test Element Screenshot', async ({ page }) => {
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
-    await page.locator('#mousehover').screenshot({ path: 'tests/screenshots/elementscreenshot.png' });
+    await page.locator('#mousehover').screenshot({ path: 'screenshots/elementscreenshot.png' });
     console.log('Test Element Screenshot Passed')
 });
 
@@ -90,13 +90,13 @@ test('@UI Test Download', async ({ page }) => {
     const downloadPromise = page.waitForEvent('download');
     await page.locator('#downloadButton').click();
     const download = await downloadPromise;
-    await download.saveAs('tests/downloads/' + download.suggestedFilename());
+    await download.saveAs('downloads/' + download.suggestedFilename());
     console.log('Test Download Passed')
 });
 
 test('@UI Test Upload', async ({ page }) => {
     await page.goto('https://demoqa.com/upload-download');
-    const filePath = 'tests/downloads/sampleFile.jpeg';
+    const filePath = 'downloads/sampleFile.jpeg';
     const fileInput = await page.$('#uploadFile');
     await fileInput.setInputFiles(filePath);
     expect(await page.locator('#uploadedFilePath').textContent()).toContain('sampleFile.jpeg');

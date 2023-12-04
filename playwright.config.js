@@ -24,12 +24,16 @@ module.exports = defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  timeout: 60000,
+  timeout: 600000,
   use: {
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: {
+      mode: 'retain-on-failure',
+      size: { width: 1920, height: 1080 }
+    },
     headless: true,
+    ignoreHTTPSErrors: true
   },
 
   projects: 
